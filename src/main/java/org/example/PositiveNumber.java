@@ -1,6 +1,4 @@
 package org.example;
-
-
 public class PositiveNumber {
     private int number;
 

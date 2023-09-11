@@ -1,16 +1,16 @@
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.example.PositiveNumber;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-class PositiveNumberTest {
+class PositiveCounterTest {
 
     @Test
     void PositiveNumber_withNoArgument_SetTheValueToZero(){
-        PositiveNumber positiveNumber = new PositiveNumber();
+        PositiveCounter positiveNumber = new PositiveCounter();
         assertEquals(0, positiveNumber.getNumber());
     }
 
@@ -18,9 +18,9 @@ class PositiveNumberTest {
     @ParameterizedTest
     @ValueSource(ints = { 1, 10, 200, 15 })
     void PositiveNumber_acceptsOneArgument(int x){
-        PositiveNumber positiveNumber = new PositiveNumber(x);
+        PositiveCounter positiveNumber = new PositiveCounter(x);
         assertEquals(x, positiveNumber.getNumber() );
-   }
+    }
 
     @Test
     void negativeNumber_throwsException(){
@@ -31,27 +31,27 @@ class PositiveNumberTest {
 
     @Test
     void increasedByOneTheNumber(){
-        PositiveNumber positiveNumber = new PositiveNumber(10);
+        PositiveCounter positiveNumber = new PositiveCounter(10);
         positiveNumber.increaseByOne();
         assertEquals(11, positiveNumber.getNumber());
     }
 
     @Test
     void incrementingMaxNumber_throwsException(){
-        PositiveNumber positiveNumber = new PositiveNumber(Integer. MAX_VALUE);
+        PositiveCounter positiveNumber = new PositiveCounter(Integer. MAX_VALUE);
         assertThrows(IllegalStateException.class, positiveNumber::increaseByOne);
 
     }
 
     @Test
     void maxValue_areNotIncremented(){
-        PositiveNumber positiveNumber = new PositiveNumber(Integer. MAX_VALUE);
+        PositiveCounter positiveNumber = new PositiveCounter(Integer. MAX_VALUE);
         assertEquals(Integer. MAX_VALUE, positiveNumber.getNumber());
     }
 
     @Test
     void theNumber_inToString(){
-        PositiveNumber positiveNumber = new PositiveNumber(10);
+        PositiveCounter positiveNumber = new PositiveCounter(10);
         assertEquals("The number is 10", positiveNumber.toString());
     }
 
