@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PositiveNumberTest {git
+class PositiveNumberTest {
 
     @Test
     void PositiveNumber_withNoArgument_SetTheValueToZero(){
