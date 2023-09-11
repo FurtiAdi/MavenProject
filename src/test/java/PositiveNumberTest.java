@@ -16,7 +16,7 @@ class PositiveNumberTest {
 
 
     @ParameterizedTest
-    @ValueSource(ints = { 1, 10, 100, 15 })
+    @ValueSource(ints = { 1, 10, 200, 15 })
     void PositiveNumber_acceptsOneArgument(int x){
         PositiveNumber positiveNumber = new PositiveNumber(x);
         assertEquals(x, positiveNumber.getNumber() );
